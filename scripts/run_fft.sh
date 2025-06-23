@@ -1,0 +1,16 @@
+torchrun --standalone --nproc_per_node 1 $(dirname "$0")/../torchrun_main.py \
+    --model_path meta-llama/Llama-2-7b-hf \
+    --dataset_name alpaca \
+    --dataset_path PATH_TO_TASK \
+    --save_dir alpaca_full_finetune \
+    --lr 0.00002 \
+    --batch_size 4 \
+    --epochs 3 \
+    --warmup_steps_ratio 0.1 \
+    --grad_clipping 1.0 \
+    --max_length 2048 \
+    --single_gpu \
+    --dtype bfloat16 \
+    --scheduler cosine \
+    --optimizer adam \
+    --activation_checkpointing

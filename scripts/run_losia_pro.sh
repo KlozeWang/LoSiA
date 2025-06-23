@@ -1,0 +1,21 @@
+
+torchrun --standalone --nproc_per_node 1 $(dirname "$0")/../torchrun_main.py \
+    --model_path meta-llama/Llama-2-7b-hf \
+    --dataset_name alpaca \
+    --dataset_path PATH_TO_TASK \
+    --save_dir alpaca_losia \
+    --lr 0.00005 \
+    --batch_size 4 \
+    --rank_factor 0.125 \
+    --train_size 50000 \
+    --period 150 \
+    --use_pro \
+    --max_length 2048 \
+    --epochs 3 \
+    --output_dim_factor 0.125 \
+    --warmup_steps_ratio 0.1 \
+    --grad_clipping 1.0 \
+    --dtype bfloat16 \
+    --single_gpu \
+    --scheduler cosine_restarts \
+    --optimizer losia_adamw_per_layer
