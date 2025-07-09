@@ -1,6 +1,6 @@
-# Low-Resources Subnet Integration Adaptation
+# Low-Resources Subnet Integration Adaptation (LoSiA)
 
-The repository contains early release of the code and deployment instructions for the paper LoSiA: Efficient High-Rank Fine-Tuning via Subnet Localization and Optimization.
+The repository contains early release of the code and deployment instructions for the paper [LoSiA: Efficient High-Rank Fine-Tuning via Subnet Localization and Optimization](https://arxiv.org/abs/2507.04487).
 
 <p align="center">
   <a href="#-news"> 💡News</a> |
@@ -60,7 +60,7 @@ LoSiA-Pro is a equivalent but refined implementation for LoSiA, boosting trainin
 Setting the training environment directly by following commands:
 
 ```
-conda create -n losia python=3.8.20
+conda create -n losia python=3.8
 conda activate losia
 pip install -r requirements.txt
 ```
@@ -123,7 +123,7 @@ bash run_losia.sh
 
 
 
-This script will run training on eight common-sense reasoning tasks. For example, train social_i_qa with the following command:
+This script will run training on eight common-sense reasoning tasks. For example, train ``social_i_qa`` with the following command:
 
 ```bash
 # This takes about 19GB of GPU memory 
@@ -153,6 +153,18 @@ torchrun --standalone --nproc_per_node 1 $(dirname "$0")/../torchrun_main.py \
 LoSiA is developed based on the training framework of [GaLore](https://github.com/jiaweizzhao/GaLore). Furthermore, We use [EleutherAI/lm-evaluation-harness](https://github.com/EleutherAI/lm-evaluation-harness) for evaluation, please follow instructions in the link for deployment.
 
 
-
 # 📚 Citation
 
+If this work is found to be helpful to you, we would greatly appreciate your citation.
+
+```ruby
+@misc{wang2025losiaefficienthighrankfinetuning,
+      title={LoSiA: Efficient High-Rank Fine-Tuning via Subnet Localization and Optimization}, 
+      author={Xujia Wang and Yunjia Qi and Bin Xu},
+      year={2025},
+      eprint={2507.04487},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2507.04487}, 
+}
+```
