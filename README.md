@@ -11,7 +11,7 @@ The repository contains early release of the code and deployment instructions fo
 
 
 # 💡News
-
+- August 2024: LoSiA is accepted to EMNLP 2025 Main Conference!
 - June 2024: The first release of open source code
 
 
